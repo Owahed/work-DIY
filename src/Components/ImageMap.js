@@ -7,8 +7,10 @@ import OnlyTemplate from './OnlyTemplate';
 const ImageMap = () => {
     return (
         <div>
+            
             <div className="diy-h3 py-4">
                 <h3 className="container">DIY</h3>
+                
             </div>
             <div className="container">
                 <div className="d-flex">

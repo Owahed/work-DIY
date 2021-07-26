@@ -8,16 +8,25 @@ import {
   Link
 } from "react-router-dom";
 import ImageMap from './Components/ImageMap';
+import DiyHome from './Components/DiyTwo/DiyHome';
+import DitTest from './Components/DiyTwo/DitTest';
 
 
 function App() {
   return (
     <div >
+      
       <Router>
         <Switch>
+          {/* <Route exact path="/">
+            <DitTest />
+          </Route> */}
           <Route exact path="/">
-            <Template />
+            <DiyHome />
           </Route>
+          {/* <Route exact path="/">
+            <Template />
+          </Route> */}
           <Route path="/home/:imgId">
             <Template />
           </Route>
