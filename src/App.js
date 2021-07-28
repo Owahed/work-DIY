@@ -10,6 +10,7 @@ import {
 import ImageMap from './Components/ImageMap';
 import DiyHome from './Components/DiyTwo/DiyHome';
 import DitTest from './Components/DiyTwo/DitTest';
+import DiyHomeOne from './Components/DiyTwo/DiyHomeOne';
 
 
 function App() {
@@ -18,12 +19,12 @@ function App() {
       
       <Router>
         <Switch>
-          {/* <Route exact path="/">
-            <DitTest />
-          </Route> */}
           <Route exact path="/">
-            <DiyHome />
+            <DiyHomeOne />
           </Route>
+          {/* <Route exact path="/">
+            <DiyHome />
+          </Route> */}
           {/* <Route exact path="/">
             <Template />
           </Route> */}

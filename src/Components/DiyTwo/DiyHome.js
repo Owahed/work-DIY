@@ -3,59 +3,68 @@ import React, { useState } from 'react';
 const DiyHome = () => {
     const [showPanel, togglePanel] = useState(false);
 
+
+    const containerPictogramsLeft = showPanel ? "0px" : "-999px";
+    const containerPictogramsPosition = showPanel ? "relative" : "absolute";
+    const containerPictogramsTransition = showPanel ? "0.5s all cubic-bezier(0.22, 0.61, 0.36, 1)" : "0.5s all cubic-bezier(0.22, 0.61, 0.36, 1)";
+    // const containerMain = showPanel ? "0px" : "-999px";
+
+
     return (
         <div>
             <div className="diy-header">
                 <h3 className="container diy-header-h3">DIY</h3>
             </div>
             <div className="d-flex mt-4">
-            <div >
-                <div className="diy-sidebar">
-                    {showPanel && <div className="diy-container-pictograms">
-                        <h3 className="pictograms-h3 text-center">pictograms</h3>
-                        <div className="pictograms-button-group ">
-                            <div className="d-flex flex-row-reverse">
-                                <div className="pictograms-button-group-main">
-                                    <div className="d-flex">
-                                        <button type="button" className=" btn-class ">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="35.302" height="24.827" viewBox="0 0 35.302 24.827">
-                                                <path id="road" d="M20.929,14.353v-.078l-.466-6.207a.653.653,0,0,0-.213-.436.629.629,0,0,0-.446-.184H16.2a.629.629,0,0,0-.446.184.653.653,0,0,0-.213.437l-.466,6.207v.078a.445.445,0,0,0,.155.388.593.593,0,0,0,.407.155h4.733a.593.593,0,0,0,.407-.155.445.445,0,0,0,.155-.388Zm14.722,9.058q0,1.416-.892,1.416H21.1a.567.567,0,0,0,.427-.184.544.544,0,0,0,.155-.436L21.3,19.241a.653.653,0,0,0-.213-.436.629.629,0,0,0-.446-.184H15.362a.629.629,0,0,0-.446.184.653.653,0,0,0-.213.436l-.388,4.966a.549.549,0,0,0,.155.436.565.565,0,0,0,.427.184H1.241q-.892,0-.892-1.416a5.846,5.846,0,0,1,.5-2.25L8.942.912a1.583,1.583,0,0,1,.5-.64A1.188,1.188,0,0,1,10.183,0h6.575a.629.629,0,0,0-.446.184A.653.653,0,0,0,16.1.621l-.291,3.724a.546.546,0,0,0,.155.446.584.584,0,0,0,.427.175h3.22a.581.581,0,0,0,.427-.175.543.543,0,0,0,.155-.446L19.9.621a.653.653,0,0,0-.213-.436A.634.634,0,0,0,19.241,0h6.575a1.181,1.181,0,0,1,.737.272,1.592,1.592,0,0,1,.5.64l8.088,20.25a5.846,5.846,0,0,1,.5,2.25Z" transform="translate(-0.349)" fill="#fff" />
-                                            </svg>
-                                            <p className="">Road Signs</p>
-                                        </button>
-                                        <button type="button" className="btn-class ">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="20.331" height="26.43" viewBox="0 0 20.331 26.43">
-                                                <path id="md-flame" d="M25.634,14.432l-.013.66c-.051.743-.5,2.757-1.4,3.474a8.887,8.887,0,0,0,.648-5.253C23.621,7.121,18.914,4.491,12.911,3.5l-1.092-.14c2.509,3,3.564,5.19,3.157,7.419a7.6,7.6,0,0,1-.889,2.007,9.752,9.752,0,0,0,.127-1.823A3.37,3.37,0,0,0,13.071,8.45a4.177,4.177,0,0,1-.578,3.03c-1.569,2.68-5.425,3.671-5.742,8.625v.241a9.034,9.034,0,0,0,4.363,7.94,5.505,5.505,0,0,1-.362-3.824,7.342,7.342,0,0,0,1.582,3.29,4.445,4.445,0,0,0,2.1,1.582,8.381,8.381,0,0,0,3.043.457c3.544,0,5.806-1.15,7.565-3.208s2.039-4.319,2.039-6.758a9.473,9.473,0,0,0-1.448-5.393Z" transform="translate(-6.751 -3.361)" fill="#fff" />
-                                            </svg>
+                <div>
+                    <div>
+                        <div style={{ left: `${containerPictogramsLeft}`, position: `${containerPictogramsPosition}`, transition: `${containerPictogramsTransition}` }} className="diy-container-pictograms">
+                            <div className="position-relative">
+                                <h3 className="pictograms-h3 text-center">pictograms</h3>
+                                <div className="pictograms-button-group ">
+                                    <div className="d-flex flex-row-reverse">
+                                        <div className="pictograms-button-group-main">
+                                            <div className="d-flex">
+                                                <button type="button" className=" btn-class ">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="35.302" height="24.827" viewBox="0 0 35.302 24.827">
+                                                        <path id="road" d="M20.929,14.353v-.078l-.466-6.207a.653.653,0,0,0-.213-.436.629.629,0,0,0-.446-.184H16.2a.629.629,0,0,0-.446.184.653.653,0,0,0-.213.437l-.466,6.207v.078a.445.445,0,0,0,.155.388.593.593,0,0,0,.407.155h4.733a.593.593,0,0,0,.407-.155.445.445,0,0,0,.155-.388Zm14.722,9.058q0,1.416-.892,1.416H21.1a.567.567,0,0,0,.427-.184.544.544,0,0,0,.155-.436L21.3,19.241a.653.653,0,0,0-.213-.436.629.629,0,0,0-.446-.184H15.362a.629.629,0,0,0-.446.184.653.653,0,0,0-.213.436l-.388,4.966a.549.549,0,0,0,.155.436.565.565,0,0,0,.427.184H1.241q-.892,0-.892-1.416a5.846,5.846,0,0,1,.5-2.25L8.942.912a1.583,1.583,0,0,1,.5-.64A1.188,1.188,0,0,1,10.183,0h6.575a.629.629,0,0,0-.446.184A.653.653,0,0,0,16.1.621l-.291,3.724a.546.546,0,0,0,.155.446.584.584,0,0,0,.427.175h3.22a.581.581,0,0,0,.427-.175.543.543,0,0,0,.155-.446L19.9.621a.653.653,0,0,0-.213-.436A.634.634,0,0,0,19.241,0h6.575a1.181,1.181,0,0,1,.737.272,1.592,1.592,0,0,1,.5.64l8.088,20.25a5.846,5.846,0,0,1,.5,2.25Z" transform="translate(-0.349)" fill="#fff" />
+                                                    </svg>
+                                                    <p className="">Road Signs</p>
+                                                </button>
+                                                <button type="button" className="btn-class ">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="20.331" height="26.43" viewBox="0 0 20.331 26.43">
+                                                        <path id="md-flame" d="M25.634,14.432l-.013.66c-.051.743-.5,2.757-1.4,3.474a8.887,8.887,0,0,0,.648-5.253C23.621,7.121,18.914,4.491,12.911,3.5l-1.092-.14c2.509,3,3.564,5.19,3.157,7.419a7.6,7.6,0,0,1-.889,2.007,9.752,9.752,0,0,0,.127-1.823A3.37,3.37,0,0,0,13.071,8.45a4.177,4.177,0,0,1-.578,3.03c-1.569,2.68-5.425,3.671-5.742,8.625v.241a9.034,9.034,0,0,0,4.363,7.94,5.505,5.505,0,0,1-.362-3.824,7.342,7.342,0,0,0,1.582,3.29,4.445,4.445,0,0,0,2.1,1.582,8.381,8.381,0,0,0,3.043.457c3.544,0,5.806-1.15,7.565-3.208s2.039-4.319,2.039-6.758a9.473,9.473,0,0,0-1.448-5.393Z" transform="translate(-6.751 -3.361)" fill="#fff" />
+                                                    </svg>
 
-                                            <p>Flammable </p>
+                                                    <p>Flammable </p>
 
-                                        </button>
-                                    </div>
-                                    <div className="d-flex">
-                                        <button type="button" className="btn-class">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="24.827" height="24.827" viewBox="0 0 24.827 24.827">
-                                                <path id="emergency" d="M21.738,24.826H3.118a2.992,2.992,0,0,1-2.194-.909,2.984,2.984,0,0,1-.908-2.194V3.1A2.992,2.992,0,0,1,.924.909,2.987,2.987,0,0,1,3.119,0h18.62a2.992,2.992,0,0,1,2.194.909A2.987,2.987,0,0,1,24.842,3.1v18.62a3.1,3.1,0,0,1-3.1,3.1Zm0-13.965A1.532,1.532,0,0,0,20.186,9.31H15.531V4.655A1.532,1.532,0,0,0,13.98,3.1h-3.1A1.532,1.532,0,0,0,9.324,4.655V9.309H4.67a1.51,1.51,0,0,0-1.091.449,1.48,1.48,0,0,0-.46,1.1v3.1a1.48,1.48,0,0,0,.46,1.1,1.51,1.51,0,0,0,1.091.449H9.324v4.655a1.48,1.48,0,0,0,.46,1.1,1.51,1.51,0,0,0,1.091.449h3.1a1.532,1.532,0,0,0,1.552-1.552V15.516h4.655a1.532,1.532,0,0,0,1.552-1.552v-3.1Z" transform="translate(-0.015)" fill="#fff" />
-                                            </svg>
-                                            <p>Emergency</p>
-                                        </button>
-                                        <button type="button" className="btn-class">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="24.851" height="24.827" viewBox="0 0 24.851 24.827">
-                                                <path id="radioactive" d="M12.425,24.827A12.189,12.189,0,0,1,7.6,23.844,12.158,12.158,0,0,1,.983,17.231a12.326,12.326,0,0,1,0-9.647A12.189,12.189,0,0,1,7.6.983a12.355,12.355,0,0,1,9.659,0,12.189,12.189,0,0,1,6.613,6.6,12.326,12.326,0,0,1,0,9.647,12.158,12.158,0,0,1-6.613,6.613,12.221,12.221,0,0,1-4.829.983Zm0-3.106V15.508a2.97,2.97,0,0,1-1.529-.413A3.139,3.139,0,0,1,9.78,14l-5.339,3.2A9.233,9.233,0,0,0,7.8,20.495,9.08,9.08,0,0,0,12.425,21.72Zm0-18.638A9.019,9.019,0,0,0,7.8,4.32a9.327,9.327,0,0,0-3.361,3.3l5.339,3.2A3.076,3.076,0,0,1,10.9,9.708a2.977,2.977,0,0,1,1.529-.413Zm-.012,7.766a1.466,1.466,0,0,0-1.092.461,1.527,1.527,0,0,0-.449,1.1,1.532,1.532,0,0,0,1.541,1.541,1.532,1.532,0,0,0,1.1-.449,1.465,1.465,0,0,0,.461-1.092,1.574,1.574,0,0,0-1.566-1.566Zm8-3.228-5.339,3.2a2.953,2.953,0,0,1,.024,3.131l5.388,3.106a9.231,9.231,0,0,0-.073-9.441Z" fill="#fff" />
-                                            </svg>
-                                            <p>Radiation</p>
-                                        </button>
+                                                </button>
+                                            </div>
+                                            <div className="d-flex">
+                                                <button type="button" className="btn-class">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24.827" height="24.827" viewBox="0 0 24.827 24.827">
+                                                        <path id="emergency" d="M21.738,24.826H3.118a2.992,2.992,0,0,1-2.194-.909,2.984,2.984,0,0,1-.908-2.194V3.1A2.992,2.992,0,0,1,.924.909,2.987,2.987,0,0,1,3.119,0h18.62a2.992,2.992,0,0,1,2.194.909A2.987,2.987,0,0,1,24.842,3.1v18.62a3.1,3.1,0,0,1-3.1,3.1Zm0-13.965A1.532,1.532,0,0,0,20.186,9.31H15.531V4.655A1.532,1.532,0,0,0,13.98,3.1h-3.1A1.532,1.532,0,0,0,9.324,4.655V9.309H4.67a1.51,1.51,0,0,0-1.091.449,1.48,1.48,0,0,0-.46,1.1v3.1a1.48,1.48,0,0,0,.46,1.1,1.51,1.51,0,0,0,1.091.449H9.324v4.655a1.48,1.48,0,0,0,.46,1.1,1.51,1.51,0,0,0,1.091.449h3.1a1.532,1.532,0,0,0,1.552-1.552V15.516h4.655a1.532,1.532,0,0,0,1.552-1.552v-3.1Z" transform="translate(-0.015)" fill="#fff" />
+                                                    </svg>
+                                                    <p>Emergency</p>
+                                                </button>
+                                                <button type="button" className="btn-class">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24.851" height="24.827" viewBox="0 0 24.851 24.827">
+                                                        <path id="radioactive" d="M12.425,24.827A12.189,12.189,0,0,1,7.6,23.844,12.158,12.158,0,0,1,.983,17.231a12.326,12.326,0,0,1,0-9.647A12.189,12.189,0,0,1,7.6.983a12.355,12.355,0,0,1,9.659,0,12.189,12.189,0,0,1,6.613,6.6,12.326,12.326,0,0,1,0,9.647,12.158,12.158,0,0,1-6.613,6.613,12.221,12.221,0,0,1-4.829.983Zm0-3.106V15.508a2.97,2.97,0,0,1-1.529-.413A3.139,3.139,0,0,1,9.78,14l-5.339,3.2A9.233,9.233,0,0,0,7.8,20.495,9.08,9.08,0,0,0,12.425,21.72Zm0-18.638A9.019,9.019,0,0,0,7.8,4.32a9.327,9.327,0,0,0-3.361,3.3l5.339,3.2A3.076,3.076,0,0,1,10.9,9.708a2.977,2.977,0,0,1,1.529-.413Zm-.012,7.766a1.466,1.466,0,0,0-1.092.461,1.527,1.527,0,0,0-.449,1.1,1.532,1.532,0,0,0,1.541,1.541,1.532,1.532,0,0,0,1.1-.449,1.465,1.465,0,0,0,.461-1.092,1.574,1.574,0,0,0-1.566-1.566Zm8-3.228-5.339,3.2a2.953,2.953,0,0,1,.024,3.131l5.388,3.106a9.231,9.231,0,0,0-.073-9.441Z" fill="#fff" />
+                                                    </svg>
+                                                    <p>Radiation</p>
+                                                </button>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>}
-                    <div className="py-2 diy-sidebar-div">
-                        <ul className="diy-sidebar-ul">
-                            <li>
-                                <div className="diy-icon-templates">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="68" height="64.14" viewBox="0 0 68 64.14">
-                                        <g id="Group_220" data-name="Group 220" transform="translate(-28 -274.755)">
+                        <div className="diy-sidebar ">
+                            <div className="py-2 diy-sidebar-div">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="78" height="526" viewBox="0 0 78 526">
+                                    <g id="icon_group" data-name="icon group" transform="translate(-32 -276)">
+                                       <a href="#">
+                                       <g id="Group_220" data-name="Group 220" transform="translate(9 1.245)">
                                             <g id="layout_29" data-name="layout 29" transform="translate(35 274.755)">
                                                 <path id="Path_9548" data-name="Path 9548" d="M3,46.191V8.4A5.4,5.4,0,0,1,8.4,3h18.9V51.59H8.4A5.4,5.4,0,0,1,3,46.191Z" transform="translate(-3 -3)" fill="none" />
                                                 <path id="Path_9549" data-name="Path 9549" d="M12,3H30.9a5.4,5.4,0,0,1,5.4,5.4V46.191a5.4,5.4,0,0,1-5.4,5.4H12Z" transform="translate(12.295 -3)" fill="none" />
@@ -63,15 +72,10 @@ const DiyHome = () => {
                                             </g>
                                             <text id="Templates" transform="translate(28 334.895)" fill="#fff" font-size="13" font-family="OpenSans-Bold, Open Sans" font-weight="700"><tspan x="0" y="0">Templates</tspan></text>
                                         </g>
-                                    </svg>
-                                </div>
-                            </li>
-                            <li>
-                                <div onClick={() => togglePanel(!showPanel)} className="diy-icon-pictograms">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="73" height="65.471" viewBox="0 0 73 65.471">
-                                        <g id="Group_219" data-name="Group 219" transform="translate(-30 -366.187)">
+                                       </a>
+                                        <g id="Group_219" data-name="Group 219" transform="translate(4.5 7.813)">
                                             <text id="Pictograms" transform="translate(30 427.658)" fill="#fff" font-size="13" font-family="OpenSans-Bold, Open Sans" font-weight="700"><tspan x="0" y="0">Pictograms</tspan></text>
-                                            <g id="Group_211" data-name="Group 211" transform="translate(37.764 366.032)">
+                                            <g id="Group_211" data-name="Group 211" transform="translate(42.764 366.032)">
                                                 <g id="Ellipse_8" data-name="Ellipse 8" transform="translate(15.338 14.368)" fill="none" stroke="#fff" stroke-width="4">
                                                     <circle cx="13.769" cy="13.769" r="13.769" stroke="none" />
                                                     <circle cx="13.769" cy="13.769" r="11.769" fill="none" />
@@ -82,14 +86,7 @@ const DiyHome = () => {
                                                 </g>
                                             </g>
                                         </g>
-                                    </svg>
-
-                                </div>
-                            </li>
-                            <li>
-                                <div className="diy-icon-text">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="36.049" height="59.77" viewBox="0 0 36.049 59.77">
-                                        <g id="Group_218" data-name="Group 218" transform="translate(-43 -453.888)">
+                                        <g id="Group_218" data-name="Group 218" transform="translate(7.475 20.111)">
                                             <text id="Text" transform="translate(48 509.658)" fill="#fff" font-size="13" font-family="OpenSans-Bold, Open Sans" font-weight="700"><tspan x="0" y="0">Text</tspan></text>
                                             <g id="Group_212" data-name="Group 212" transform="translate(42.969 454.015)">
                                                 <path id="text-align-left" d="M28.864,10.549H7.524a1.524,1.524,0,1,1,0-3.049h21.34a1.524,1.524,0,1,1,0,3.049Zm-6.1,6.1H7.524a1.524,1.524,0,0,1,0-3.049H22.767a1.524,1.524,0,0,1,0,3.049Zm6.1,6.1H7.524a1.524,1.524,0,1,1,0-3.049h21.34a1.524,1.524,0,1,1,0,3.049Zm-6.1,6.1H7.524a1.524,1.524,0,1,1,0-3.049H22.767a1.524,1.524,0,1,1,0,3.049Z" transform="translate(0.103 -0.41)" fill="#fff" fill-rule="evenodd" />
@@ -99,28 +96,14 @@ const DiyHome = () => {
                                                 </g>
                                             </g>
                                         </g>
-                                    </svg>
-
-                                </div>
-                            </li>
-                            <li>
-                                <div className="diy-icon-upload">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="55.355" viewBox="0 0 48 55.355">
-                                        <g id="Group_217" data-name="Group 217" transform="translate(-38 -539.889)">
+                                        <g id="Group_217" data-name="Group 217" transform="translate(7.902 28.111)">
                                             <text id="Upload" transform="translate(39 591.244)" fill="#fff" font-size="13" font-family="OpenSans-Bold, Open Sans" font-weight="700"><tspan x="0" y="0">Upload</tspan></text>
                                             <g id="bx-cloud-upload" transform="translate(38 539.889)">
                                                 <path id="Path_9556" data-name="Path 9556" d="M23.3,35.337V26.3h6.779L21.039,15,12,26.3h6.779v9.039Z" transform="translate(1.558 -3.702)" fill="#fff" />
                                                 <path id="Path_9557" data-name="Path 9557" d="M14.3,39.135h4.519v-3.5H14.3c-3.737,0-8.49-4.057-8.49-7.795,0-3.173,3.269-6.458,6.6-7.043H14.3V18.445A12.285,12.285,0,0,1,25.6,10.6c6.231,0,12.1,5.351,12.1,11.582v2.242h2.615c2.493,0,4.357,3.18,4.357,5.673s-3.017,5.535-5.51,5.535H32.375v3.5h6.779a9.04,9.04,0,0,0,2.133-17.824A15.838,15.838,0,0,0,25.6,7.5,15.229,15.229,0,0,0,11.49,16.877,11.854,11.854,0,0,0,3,27.837,11.31,11.31,0,0,0,14.3,39.135Z" transform="translate(-3 -7.5)" fill="#fff" />
                                             </g>
                                         </g>
-                                    </svg>
-
-                                </div>
-                            </li>
-                            <li>
-                                <div className="diy-icon-logo">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="33.455" height="60.355" viewBox="0 0 33.455 55.355">
-                                        <g id="Group_216" data-name="Group 216" transform="translate(-46 -621.475)">
+                                        <g id="Group_216" data-name="Group 216" transform="translate(5.773 36.525)">
                                             <text id="Logo" transform="translate(48 672.83)" fill="#fff" font-size="13" font-family="OpenSans-Bold, Open Sans" font-weight="700"><tspan x="0" y="0">Logo</tspan></text>
                                             <g id="Group_213" data-name="Group 213" transform="translate(46 621.475)">
                                                 <path id="night-alt-lightning" d="M12.928,28.823h4.139l-2.519,7.954h.576l8.007-10.724a.242.242,0,0,0,.055-.261.239.239,0,0,0-.252-.135H18.705l4.426-8.079q.2-.414-.27-.414h-5.65a.5.5,0,0,0-.414.27S12.652,28.823,12.928,28.823Z" transform="translate(-1.076 -11.502)" fill="#fff" />
@@ -130,14 +113,7 @@ const DiyHome = () => {
                                                 </g>
                                             </g>
                                         </g>
-                                    </svg>
-
-                                </div>
-                            </li>
-                            <li>
-                                <div className="diy-icon-background">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="78" height="54" viewBox="0 0 78 54">
-                                        <g id="Group_215" data-name="Group 215" transform="translate(-26 -706)">
+                                        <g id="Group_215" data-name="Group 215" transform="translate(6 42)">
                                             <text id="Background" transform="translate(26 756)" fill="#fff" font-size="13" font-family="OpenSans-Bold, Open Sans" font-weight="700"><tspan x="0" y="0">Background</tspan></text>
                                             <g id="Group_214" data-name="Group 214" transform="translate(48.41 706.241)">
                                                 <g id="Rectangle_91" data-name="Rectangle 91" transform="translate(-0.41 -0.241)" fill="none" stroke="#fff" stroke-width="3">
@@ -151,18 +127,18 @@ const DiyHome = () => {
                                                 <line id="Line_21" data-name="Line 21" y1="19.269" x2="19.269" transform="translate(5.153 5.207)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="2" />
                                             </g>
                                         </g>
-                                    </svg>
-                                </div>
-                            </li>
-                        </ul>
+                                    </g>
+                                </svg>
+
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div className="diy-container d-flex justify-content-center align-items-center">
-            <div className="diy-body">
+                <div className="diy-container">
+                    <div className="diy-body">
 
-            </div>
-            </div>
+                    </div>
+                </div>
             </div>
         </div>
     );
