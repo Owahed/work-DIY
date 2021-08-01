@@ -6,16 +6,16 @@ const ImageTemplate = ({ img }) => {
     const allImg = img.img;
     const imgId = img.id;
 
-    const history = useHistory();
+    // const history = useHistory();
     const handelClick = (imgId) => {
-        history.push(`/home/${imgId}`)
+        // history.push(`/home/${imgId}`)
     }
     return (
-        <div className="col-3 ">
+        <div className="col-6 ">
             <div className="image-template ">
                 <div >
                 <a  style={{ cursor: 'pointer' }} onClick={() => handelClick(imgId)}>
-                    <img width="150px" src={allImg} alt="" />
+                    <img width="123px" height="123px" src={allImg} alt="" />
                 </a>
                 </div>
             </div>

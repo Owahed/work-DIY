@@ -1,0 +1,12 @@
+.upload-logo-container-body{
+    /* margin-left: 20px; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    height: 350px;
+}
+.upload-logo-container-body p{
+    color: #fff;
+    font-size: 20px;
+}
