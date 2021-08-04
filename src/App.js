@@ -8,6 +8,7 @@ import {
   Link
 } from "react-router-dom";
 import ImageMap from './Components/ImageMap';
+import PageOne from './Components/DiyTwo/PageOne';
 
 
 function App() {
@@ -16,8 +17,11 @@ function App() {
       <Router>
         <Switch>
           <Route exact path="/">
-            <Template />
+            <PageOne />
           </Route>
+          {/* <Route exact path="/">
+            <Template />
+          </Route> */}
           <Route path="/home/:imgId">
             <Template />
           </Route>

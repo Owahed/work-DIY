@@ -127,3 +127,18 @@
 .already-template-link:hover{
   color: #000;
 }
+
+/* --------------------------DIY**TWO---------------------- */
+/* --------------------------DIY**TWO---------------------- */
+/* --------------------------DIY**TWO---------------------- */
+
+.diy-container{
+  height: 85px;
+  width: auto;
+  background: #F2F2F2;
+  display: flex;
+  align-items: center;
+}
+.diy-container-h3{
+  color: #003459;
+}
