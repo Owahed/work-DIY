@@ -57,7 +57,7 @@ const Text = () => {
             autocomplete="off"
           />
           <label class="btn btn-outline-primary" for="btncheck1">
-            <svg
+            {/* <svg
               xmlns="http://www.w3.org/2000/svg"
               width="17"
               height="33"
@@ -75,7 +75,11 @@ const Text = () => {
                   B
                 </tspan>
               </text>
-            </svg>
+            </svg> */}
+            <div className="text-B-U">
+              {"B "}
+              {/* <h4>B</h4> */}
+            </div>
           </label>
 
           <input
@@ -86,7 +90,7 @@ const Text = () => {
           />
           <label class="btn btn-outline-primary" for="btncheck2">
             {/* Checkbox 2 */}
-            <svg
+            {/* <svg
               xmlns="http://www.w3.org/2000/svg"
               width="7"
               height="33"
@@ -104,7 +108,11 @@ const Text = () => {
                   I
                 </tspan>
               </text>
-            </svg>
+            </svg> */}
+            <div className="text-slash">
+              {"/ "}
+              {/* <h4>B</h4> */}
+            </div>
           </label>
 
           <input
@@ -115,7 +123,7 @@ const Text = () => {
           />
           <label class="btn btn-outline-primary" for="btncheck3">
             {/* Checkbox 3 */}
-            <svg
+            {/* <svg
               xmlns="http://www.w3.org/2000/svg"
               width="17"
               height="32"
@@ -132,7 +140,11 @@ const Text = () => {
                   U
                 </tspan>
               </text>
-            </svg>
+            </svg> */}
+            <div className="text-B-U">
+              {"U "}
+              {/* <h4>B</h4> */}
+            </div>
           </label>
 
           <input

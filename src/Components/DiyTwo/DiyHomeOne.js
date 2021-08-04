@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import imgCaution from "../../Image/Caution_7x10_01.jpeg";
 import Background from "./Background/Background";
 import Logo from "./Logo/Logo";
@@ -6,15 +6,35 @@ import Pictograms from "./Pictograms";
 import Templates from "./Templates";
 import Text from "./Text/Text";
 import Upload from "./Upload/Upload";
+import FakeData from "../../FakeData/FakeData";
 
 const DiyHomeOne = () => {
-  const [showPanel, togglePanel] = useState(false);
   const [showToggleTemplates, setToggleTemplates] = useState(false);
+  const [showPanel, togglePanel] = useState(false);
   const [showTextPanel, setTextPanel] = useState(false);
   const [showUploadPanel, setUploadPanel] = useState(false);
   const [showLogoPanel, setLogoPanel] = useState(false);
   const [showBackgroundPanel, setBackgroundPanel] = useState(false);
+  const [selectedImg, setSelectedImg] = useState({
+    id: "01",
+    img: imgCaution,
+  });
 
+  const [hrState, setHrState] = useState({
+    option1: false,
+    option2: false,
+    option3: false,
+    option4: false,
+    all: false,
+  });
+
+  const btnRaf = useRef(null);
+  useEffect(() => {
+    console.log(btnRaf.current);
+  }, []);
+
+  // const containerPictogramsLeft =
+  //   hrState.option1 == true || hrState.option2 == true ? "0px" : "-540px";
   const containerPictogramsLeft =
     showPanel ||
     showToggleTemplates ||
@@ -24,13 +44,40 @@ const DiyHomeOne = () => {
     showBackgroundPanel
       ? "0px"
       : "-540px";
-  const containerPictogramsTransition = showPanel
-    ? "0.3s all cubic-bezier(0.22, 0.61, 0.36, 1)"
-    : "0.3s all cubic-bezier(0.22, 0.61, 0.36, 1)";
-  const containerMainTransition = showPanel
-    ? "0.3s all cubic-bezier(0.22, 0.61, 0.36, 1)"
-    : "0.3s all cubic-bezier(0.22, 0.61, 0.36, 1)";
-  const containerMain = showPanel ? "145px" : "380px";
+  const containerPictogramsTransition =
+    showPanel ||
+    showToggleTemplates ||
+    showTextPanel ||
+    showUploadPanel ||
+    showLogoPanel ||
+    showBackgroundPanel
+      ? "0.3s all cubic-bezier(0.22, 0.61, 0.36, 1)"
+      : "0.3s all cubic-bezier(0.22, 0.61, 0.36, 1)";
+  const containerMainTransition =
+    showPanel ||
+    showToggleTemplates ||
+    showTextPanel ||
+    showUploadPanel ||
+    showLogoPanel ||
+    showBackgroundPanel
+      ? "0.3s all cubic-bezier(0.22, 0.61, 0.36, 1)"
+      : "0.3s all cubic-bezier(0.22, 0.61, 0.36, 1)";
+  const containerMain =
+    showPanel ||
+    showToggleTemplates ||
+    showTextPanel ||
+    showUploadPanel ||
+    showLogoPanel ||
+    showBackgroundPanel
+      ? "145px"
+      : "380px";
+
+  // image
+
+  const imgData = (imgId) => {
+    var templateData = FakeData.find((data) => data.id == imgId);
+    setSelectedImg(templateData);
+  };
 
   return (
     <div>
@@ -47,12 +94,14 @@ const DiyHomeOne = () => {
           className="diy-container-pictograms col"
         >
           <div style={{ marginLeft: "27%" }}>
+            {showToggleTemplates && <Templates imgData={imgData} />}
             {showPanel && <Pictograms />}
-            {showToggleTemplates && <Templates />}
             {showTextPanel && <Text />}
             {showUploadPanel && <Upload />}
             {showLogoPanel && <Logo />}
             {showBackgroundPanel && <Background />}
+            {/* {hrState.option2 && <Pictograms />}
+            {hrState.option1 && <Templates imgData={imgData} />} */}
           </div>
         </div>
 
@@ -65,7 +114,7 @@ const DiyHomeOne = () => {
           className="diy-container col"
         >
           <div className="diy-body">
-            <img width="360px" src={imgCaution} alt="" />
+            <img width="360px" src={selectedImg.img} alt="" />
           </div>
         </div>
       </div>
@@ -83,8 +132,28 @@ const DiyHomeOne = () => {
                 data-name="icon group"
                 transform="translate(-32 -276)"
               >
-                <a
+                {/* <a
                   onClick={() => setToggleTemplates(!showToggleTemplates)}
+                  href="#"
+                > */}
+                <a
+                  onClickCapture={() => {
+                    setToggleTemplates(!showToggleTemplates);
+                    togglePanel(false);
+                    setTextPanel(false);
+                    setUploadPanel(false);
+                    setLogoPanel(false);
+                    setBackgroundPanel(false);
+                  }}
+                  // onClick={() => {
+                  //   setHrState((state) => ({
+                  //     ...state,
+                  //     option1: true,
+                  //     option2: false,
+                  //     option3: false,
+                  //     option4: false,
+                  //   }));
+                  // }}
                   href="#"
                 >
                   <g
@@ -133,7 +202,28 @@ const DiyHomeOne = () => {
                     </text>
                   </g>
                 </a>
-                <a onClick={() => togglePanel(!showPanel)} href="#">
+                {/* </a> */}
+                {/* <a onClick={() => togglePanel(!showPanel)} href="#"> */}
+                <a
+                  onClick={() => {
+                    setToggleTemplates(false);
+                    togglePanel(!showPanel);
+                    setTextPanel(false);
+                    setUploadPanel(false);
+                    setLogoPanel(false);
+                    setBackgroundPanel(false);
+                  }}
+                  // onClick={() => {
+                  //   setHrState((state) => ({
+                  //     ...state,
+                  //     option1: false,
+                  //     option2: true,
+                  //     option3: false,
+                  //     option4: false,
+                  //   }));
+                  // }}
+                  href="#"
+                >
                   <g
                     id="Group_219"
                     data-name="Group 219"
@@ -196,7 +286,18 @@ const DiyHomeOne = () => {
                     </g>
                   </g>
                 </a>
-                <a onClick={() => setTextPanel(!showTextPanel)} href="#">
+                {/* </a> */}
+                <a
+                  onClick={() => {
+                    setTextPanel(!showTextPanel);
+                    setToggleTemplates(false);
+                    togglePanel(false);
+                    setUploadPanel(false);
+                    setLogoPanel(false);
+                    setBackgroundPanel(false);
+                  }}
+                  href="#"
+                >
                   <g
                     id="Group_218"
                     data-name="Group 218"
@@ -245,7 +346,17 @@ const DiyHomeOne = () => {
                     </g>
                   </g>
                 </a>
-                <a onClick={() => setUploadPanel(!showUploadPanel)} href="#">
+                <a
+                  onClick={() => {
+                    setUploadPanel(!showUploadPanel);
+                    setToggleTemplates(false);
+                    togglePanel(false);
+                    setTextPanel(false);
+                    setLogoPanel(false);
+                    setBackgroundPanel(false);
+                  }}
+                  href="#"
+                >
                   <g
                     id="Group_217"
                     data-name="Group 217"
@@ -282,7 +393,17 @@ const DiyHomeOne = () => {
                   </g>
                 </a>
 
-                <a onClick={() => setLogoPanel(!showLogoPanel)} href="#">
+                <a
+                  onClick={() => {
+                    setLogoPanel(!showLogoPanel);
+                    setToggleTemplates(false);
+                    togglePanel(false);
+                    setTextPanel(false);
+                    setUploadPanel(false);
+                    setBackgroundPanel(false);
+                  }}
+                  href="#"
+                >
                   <g
                     id="Group_216"
                     data-name="Group 216"
@@ -331,7 +452,14 @@ const DiyHomeOne = () => {
                   </g>
                 </a>
                 <a
-                  onClick={() => setBackgroundPanel(!showBackgroundPanel)}
+                  onClick={() => {
+                    setBackgroundPanel(!showBackgroundPanel);
+                    setToggleTemplates(false);
+                    togglePanel(false);
+                    setTextPanel(false);
+                    setUploadPanel(false);
+                    setLogoPanel(false);
+                  }}
                   href="#"
                 >
                   <g
