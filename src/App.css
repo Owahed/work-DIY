@@ -105,7 +105,7 @@
   padding: 0px 12px 12px 15px;
 }
 /* width */
-.image-map-container::-webkit-scrollbar {
+.scrollbar::-webkit-scrollbar {
   width: 10px;
 }
 
@@ -116,7 +116,7 @@
 } */
  
 /* Handle */
-.image-map-container::-webkit-scrollbar-thumb {
+.scrollbar::-webkit-scrollbar-thumb {
   background: #BEC2C5; 
   border-radius: 10px;
 }
@@ -205,20 +205,21 @@ justify-content: center;
   align-items: center;
   cursor: pointer;
   
-  width: 136px;
-height: 95px;
-border-radius: 0px 16px 16px 0px;
-background: #003459;
-border: 2px solid #003459;
-box-shadow: 0px 0px 9px rgba(0, 0, 0, 0.55);
+ 
 
 
  }
-  .active{
+  /* .active{
     background: #fff;
-  } 
-  .active a{
-    background: #56CCF2;
+  }  */
+  .active {
+    width: 136px;
+    height: 95px;
+    border-radius: 0px 16px 16px 0px;
+    background: #003459;
+    border: 2px solid #003459;
+    box-shadow: 0px 0px 9px rgba(0, 0, 0, 0.55);
+    
   } 
  /* .diy-sidebar-ul{
    width: 78px;
