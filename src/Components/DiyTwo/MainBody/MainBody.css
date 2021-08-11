@@ -1,0 +1,41 @@
+.mainBody-container{
+    width: 380px;
+    height: 430px;
+    display: flex;
+    justify-content: center;
+}
+.main-caution{
+   width: 320px;
+   height: 430px;
+   border: 3px solid #000;
+   border-radius: 5px;
+}
+.templates-header{
+    height: 80px;
+    background: #FFD72E;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 3px solid #000;
+}
+.templates-header h1{
+    color: #fff;
+    font-size: 45px;
+    margin-bottom: 0 !important;
+}
+.templates-body{
+    height: 180px;
+    border-bottom: 3px solid #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.templates-body img{
+    width: 150px;
+}
+.templates-footer{
+    height: 165px;
+}
+.templates-footer h4{
+    line-height: 30px;
+}

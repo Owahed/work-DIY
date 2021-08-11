@@ -14,8 +14,6 @@ const Pictograms = ({pictogramImgData}) => {
 
      const [pictograms,setPictograms]=useState(MandatoryData);
 
-    // const Mandatory=mandatory?mandatory: null;
-
    useEffect(()=>{
     
     if (mandatory==true) {

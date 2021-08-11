@@ -1,8 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Upload.css";
 import "../File.css";
 
-const Upload = () => {
+const Upload = ({handleLogAndImgChange}) => {
+  // const [state, setState] = useState({ file: null });
+
+  // function handleChange(event) {
+  //   setState({
+  //     file: URL.createObjectURL(event.target.files[0])
+  //   })
+  // }
   return (
     <div>
       <div className="mt-5 pb-2">
@@ -14,7 +21,7 @@ const Upload = () => {
             Upload your Pictures, <br /> Pictogram and Symbols
           </p>
 
-          <input type="file" id="file" />
+          <input type="file" accept="image/png, image/jpeg" onChange={(event) => handleLogAndImgChange(event)} id="file" />
           <label for="file">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -90,6 +97,9 @@ const Upload = () => {
             </svg>
           </label>
         </div>
+      </div>
+      <div>
+        {/* <img width="100px" src={state.file} alt="" /> */}
       </div>
     </div>
   );
