@@ -1,16 +1,22 @@
 import React from "react";
 import "./Text.css";
 
-const Text = () => {
+const Text = ({ EditButton }) => {
   return (
     <div>
       <div className="mt-5 pb-2">
         <h4 className="pictograms-h4">Text</h4>
       </div>
       <div className="text-container-body">
-        <button className="text-header-title text-h2">
+        {/* <button className="text-header-title text-h2">
           <h2>Add a Heading</h2>
-        </button>
+        </button> */}
+        <EditButton
+          className="text-header-title text-h2"
+          cmd="formatBlock"
+          arg="h1"
+          name="Add a Heading"
+        />
         <button className="text-header-title text-h5">
           <h5>Add a Sub-Heading</h5>
         </button>
@@ -44,109 +50,15 @@ const Text = () => {
         </div>
       </div>
       <div className="mt-3 d-flex justify-content-center">
+        <EditButton cmd="bold" />
+        <EditButton cmd="italic" />
+        <EditButton cmd="underline" />
         <div
           className=""
           class="btn-group text-btn-group"
           role="group"
           aria-label="Basic checkbox radio toggle button group"
         >
-          <input
-            type="checkbox"
-            class="btn-check"
-            id="btncheck1"
-            autocomplete="off"
-          />
-          <label class="btn btn-outline-primary" for="btncheck1">
-            {/* <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="17"
-              height="33"
-              viewBox="0 0 17 33"
-            >
-              <text
-                id="B"
-                transform="translate(0 26)"
-                fill="#292929"
-                font-size="24"
-                font-family="OpenSans-Bold, Open Sans"
-                font-weight="700"
-              >
-                <tspan x="0" y="0">
-                  B
-                </tspan>
-              </text>
-            </svg> */}
-            <div className="text-B-U">
-              {"B "}
-              {/* <h4>B</h4> */}
-            </div>
-          </label>
-
-          <input
-            type="checkbox"
-            class="btn-check"
-            id="btncheck2"
-            autocomplete="off"
-          />
-          <label class="btn btn-outline-primary" for="btncheck2">
-            {/* Checkbox 2 */}
-            {/* <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="7"
-              height="33"
-              viewBox="0 0 7 33"
-            >
-              <text
-                id="I"
-                transform="translate(0 26)"
-                fill="#292929"
-                font-size="24"
-                font-family="OpenSans-Italic, Open Sans"
-                font-style="italic"
-              >
-                <tspan x="0" y="0">
-                  I
-                </tspan>
-              </text>
-            </svg> */}
-            <div className="text-slash">
-              {"/ "}
-              {/* <h4>B</h4> */}
-            </div>
-          </label>
-
-          <input
-            type="checkbox"
-            class="btn-check"
-            id="btncheck3"
-            autocomplete="off"
-          />
-          <label class="btn btn-outline-primary" for="btncheck3">
-            {/* Checkbox 3 */}
-            {/* <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="17"
-              height="32"
-              viewBox="0 0 17 32"
-            >
-              <text
-                id="U"
-                transform="translate(0 25)"
-                fill="#292929"
-                font-size="23"
-                font-family="OpenSans-Regular, Open Sans"
-              >
-                <tspan x="0" y="0">
-                  U
-                </tspan>
-              </text>
-            </svg> */}
-            <div className="text-B-U">
-              {"U "}
-              {/* <h4>B</h4> */}
-            </div>
-          </label>
-
           <input
             type="radio"
             class="btn-check"
